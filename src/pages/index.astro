@@ -1,10 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
 // import Card from '../components/Card.astro';
 ---
 
 <Layout title="Javier Sin - Portfolio" description="Javier Sin's Porfolio. Last year's Computer Science Student at the University of Rhode Island">
 	<main>
-		Aquí va el Portfolio
+		<section class="w-full lg:w-[740px] mx-auto py-44">
+			<h1 class="text-white">Hey, I'm Javier Sin <Badge>Available for hiring</Badge></h1>
+
+			<img class="rounded-full size-12 object-cover object-top" src="/profile_pic.jpg" alt="Javier Sin's picture"/>
+			<h2>Last year Computer Science student from Zaragoza, Spain. Currently studying at the University of Rhode Island.
+				Eager to become a great Full Stack Developer.
+			</h2>
+		</section>
 	</main>
 </Layout>
