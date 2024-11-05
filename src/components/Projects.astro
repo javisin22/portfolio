@@ -1,0 +1,29 @@
+---
+const PROJECTS = [
+    {    
+        title: "Portfolio",
+        description: "This is my personal portfolio. It's a static site built with Astro, Tailwind CSS and TypeScript. It's hosted on Vercel.",
+        link: "#",
+        github: "#",
+        image: "https://via.placeholder.com/300x200",
+        tags: ["Astro", "Tailwind CSS", "TypeScript", "Vercel"]
+    }
+]
+---
+
+{
+    PROJECTS.map(project =>
+        <article>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <ul>
+                {
+                    project.tags.map(tag => (
+                        <li>{tag}</li>
+                    ))
+                }
+            </ul>
+            <img src={project.image} alt={`Captura de pantalla del proyecto ${project.title}`} />
+        </article>
+    )
+}

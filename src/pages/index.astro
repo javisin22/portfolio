@@ -8,11 +8,13 @@ import SocialBadge from '../components/SocialBadge.astro';
 import Briefcase from '../components/icons/Briefcase.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout title="Javier Sin - Portfolio" description="Javier Sin's Porfolio. Last year's Computer Science Student at the University of Rhode Island">
 	<main class="px-4">
-		<SectionContainer class="py-44 pb-24">
+		<SectionContainer class="py-44 pb-32">
 			<img class="rounded-full size-20 mb-4 object-cover object-top z-10" src="/profile_pic.jpg" alt="Javier Sin's picture"/>
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
 				Hey, I'm Javier Sin 
@@ -49,11 +51,20 @@ import SectionContainer from '../components/SectionContainer.astro';
 		</SectionContainer>
 
 		<SectionContainer id="experience">
-			<h2 class="flex gap-x-3 items-center 2xl font-semibold mb-6">
+			<h2 class="flex gap-x-3 items-center 3xl font-semibold mb-6">
 				<Briefcase class="size-7"/>
 				Work Experience
 			</h2>
 			<Experience/>
 		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="flex gap-x-3 items-center 3xl font-semibold mb-6">
+				<CodeIcon class="size-7"/>
+				Projects
+			</h2>
+			<Projects/>
+		</SectionContainer>
+
 	</main>
 </Layout>
