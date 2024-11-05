@@ -1,23 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
-// import Card from '../components/Card.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import SocialBadge from '../components/SocialBadge.astro';
 ---
 
 <Layout title="Javier Sin - Portfolio" description="Javier Sin's Porfolio. Last year's Computer Science Student at the University of Rhode Island">
 	<main>
 		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<h1 class="text-white text-5xl font-bold flex flex-row justify-center gap-x-4 pb-10">
+			<img class="rounded-full size-12 mb-4 object-cover object-top" src="/profile_pic.jpg" alt="Javier Sin's picture"/>
+			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
 			Hey, I'm Javier Sin 
-			<div class="flex justify-center items-center">
+			<a href="https://linkedin.com/in/javier-sin-pelayo/" target="_blank" rel="noopener" class="flex justify-center items-center">
 				<Badge>Available for hiring</Badge>
-			</div>
+			</a>
 			</h1>
 
-			<img class="rounded-full size-12 object-cover object-top" src="/profile_pic.jpg" alt="Javier Sin's picture"/>
-			<h2 class="text-xl opacity-80">Last year Computer Science student from Zaragoza, Spain. Currently studying at the University of Rhode Island.
-				Eager to become a great Full Stack Developer.
+			<h2 class="text-2xl opacity-80 text-wrap">
+				Last year <span class="text-orange-500/80">Computer Science student</span> from Zaragoza, Spain. 
+				Currently studying at the <span class="text-blue-500/80">University of Rhode Island</span>.
+				Eager to become a great <span class="text-green-500/80">Full Stack</span> Developer.
 			</h2>
+
+			<nav class="flex  mt-8">
+				<ul>
+					<li class="flex flex-row gap-x-4">
+						<SocialBadge href="https://linkedin.com/in/javier-sin-pelayo/">
+							<LinkedInIcon class="size-6"/>
+							LinkedIn
+						</SocialBadge>
+	
+						<SocialBadge href="https://github.com/javisin22">
+							<GitHubIcon class="size-6"/>
+							GitHub
+						</SocialBadge>
+					</li>
+				</ul>
+			</nav>
 		</section>
 	</main>
 </Layout>
