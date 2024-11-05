@@ -1,29 +1,160 @@
 ---
-const PROJECTS = [
+import NextJS from "./icons/Next.astro"; 
+import Tailwind from "./icons/TailwindCSS.astro";
+import Supabase from "./icons/Supabase.astro";
+import AstroIcon from "./icons/Astro.astro";
+import Typescript from "./icons/Typescript.astro";
+import React from "./icons/React.astro";
+import NodeJS from "./icons/NodeJS.astro";
+import SocketIO from "./icons/Socket-io.astro";
+import HtmlIcon from "./icons/Html.astro";
+import CSSIcon from "./icons/CSS.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import Python from "./icons/Python.astro";
+import SQLIcon from "./icons/SQL.astro";
+import Android from "./icons/Android.astro";
+
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJS
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-blue-500 text-white",
+        icon: Tailwind
+    },
+    SUPABASE: {
+        name: "Supabase",
+        class: "bg-green-500 text-white",
+        icon: Supabase
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-purple-500 text-white",
+        icon: AstroIcon
+    },
+    TYPESCRIPT: {
+        name: "TypeScript",
+        class: "bg-blue-500 text-white",
+        icon: Typescript
+    },
+		REACT: {
+				name: "React.js",
+				class: "bg-blue-500 text-white",
+				icon: React
+		},
+		NODEJS: {
+				name: "Node.js",
+				class: "bg-green-500 text-white",
+				icon: NodeJS
+		},
+		SOCKETIO: {
+				name: "Socket.io",
+				class: "bg-black text-white",
+				icon: SocketIO
+		},
+		HTML: {
+				name: "HTML",
+				class: "bg-orange-300 text-white",
+				icon: HtmlIcon
+		},
+		CSS: {
+				name: "CSS",
+				class: "bg-blue-500 text-white",
+				icon: CSSIcon
+		},
+		JAVASCRIPT: {
+				name: "JavaScript",
+				class: "bg-yellow-300 text-white",
+				icon: JavaScript
+		},
+		PYTHON: {
+				name: "Python",
+				class: "bg-blue-500 text-white",
+				icon: Python
+		},
+		SQL: {
+				name: "PostgreSQL",
+				class: "bg-blue-500 text-white",
+				icon: SQLIcon
+		},
+		ANDROID: {
+				name: "Android Studio",
+				class: "bg-green-500 text-white",
+				icon: Android
+		}
+}
+
+const WEB_PROJECTS = [
+    {
+        title: "Trabajo Fin de Grado",
+        description: "This is my Bachelor's Final Project. It's a Social Media Web App designed for Fitness Enthusiasts. It's built with Next.js + Typescript.js, Tailwind CSS and Supabase. I'm currently working on it.",
+        link: "#",
+        github: "#",
+        image: "https://via.placeholder.com/300x200",
+        tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SUPABASE]
+    },
     {    
         title: "Portfolio",
         description: "This is my personal portfolio. It's a static site built with Astro, Tailwind CSS and TypeScript. It's hosted on Vercel.",
         link: "#",
         github: "#",
         image: "https://via.placeholder.com/300x200",
-        tags: ["Astro", "Tailwind CSS", "TypeScript", "Vercel"]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT]
     }
+		// , 
+    // {
+    //     title: "ASESIN-ADA",
+    //     description: "This is a clone for the Cluedo board game. It has a Web and Desktop version. The Web version is built with React.js and the Desktop version is built with Angular.js and Electron.\
+    //                   The backend is built with Express.js and PostgresDB.",
+    //     link: "#",
+    //     github: "https://github.com/UNIZAR-30226-2024-01",
+    //     image: "https://via.placeholder.com/300x200",
+    //     tags: ["React.js", "Angular.js", "Electron", "Express.js", "PostgresDB"]
+    // },
+    // {
+    //     title: "PCCompuestos",
+    //     description: "This is a website I built for a local computer store. It's built with Vue.js, Tailwind CSS and a Express.js backend.",
+    //     link: "#",
+    //     github: "https://github.com/javisin22/frontend-PCCompuestos",
+    //     image: "https://via.placeholder.com/300x200",
+    //     tags: ["Vue.js", "Tailwind CSS", "Express.js"]
+    // },
+]
+
+const OTHER_PROJECTS = [
+    {
+        title: "T221-COMIDAS",
+        description: "This is a project I built for a local restaurant. It's a Mobile App built with Android Studio.",
+        link: "#",
+        github: "https://github.com/javisin22/T221_comidas",
+        image: "https://via.placeholder.com/300x200",
+        tags: ["Android Studio"]
+    },
+    // Add more projects here (Assignments from UniZar)
 ]
 ---
 
 {
-    PROJECTS.map(project =>
-        <article>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <ul>
-                {
-                    project.tags.map(tag => (
-                        <li>{tag}</li>
-                    ))
-                }
-            </ul>
-            <img src={project.image} alt={`Captura de pantalla del proyecto ${project.title}`} />
-        </article>
-    )
+	WEB_PROJECTS.map(project =>
+		<article class="mb-6">
+			<h3 class="text-2xl font-semibold text-orange-300 mb-2">{project.title}</h3>
+			<p class="text-lg mb-4 text-pretty">{project.description}</p>
+			<ul class="flex flex-row gap-x-2 mb-4">
+				{
+					project.tags.map(tag => (
+						<li>
+							<span class={`flex justify-center items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+								<tag.icon/>  
+								{tag.name}
+							</span>
+						</li>
+					))
+				}
+			</ul>
+			<img class="rounded" src={project.image} alt={`Captura de pantalla del proyecto ${project.title}`} />
+		</article>
+	)
 }
