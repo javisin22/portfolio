@@ -13,6 +13,7 @@ import JavaScript from "./icons/JavaScript.astro";
 import Python from "./icons/Python.astro";
 import SQLIcon from "./icons/SQL.astro";
 import Android from "./icons/Android.astro";
+import Github from "./icons/Github.astro";
 
 const TAGS = {
     NEXT: {
@@ -22,7 +23,7 @@ const TAGS = {
     },
     TAILWIND: {
         name: "Tailwind CSS",
-        class: "bg-[#35bef8] text-white",
+        class: "bg-[#35bef8] text-black",
         icon: Tailwind
     },
     SUPABASE: {
@@ -40,51 +41,56 @@ const TAGS = {
         class: "bg-[#037acc] text-white",
         icon: Typescript
     },
-		REACT: {
-				name: "React.js",
-				class: "bg-[#087ea4] text-white",
-				icon: React
-		},
-		NODEJS: {
-				name: "Node.js",
-				class: "bg-green-500 text-white",
-				icon: NodeJS
-		},
-		SOCKETIO: {
-				name: "Socket.io",
-				class: "bg-black text-white",
-				icon: SocketIO
-		},
-		HTML: {
-				name: "HTML",
-				class: "bg-orange-300 text-white",
-				icon: HtmlIcon
-		},
-		CSS: {
-				name: "CSS",
-				class: "bg-blue-500 text-white",
-				icon: CSSIcon
-		},
-		JAVASCRIPT: {
-				name: "JavaScript",
-				class: "bg-yellow-300 text-white",
-				icon: JavaScript
-		},
-		PYTHON: {
-				name: "Python",
-				class: "bg-blue-500 text-white",
-				icon: Python
-		},
-		SQL: {
-				name: "PostgreSQL",
-				class: "bg-blue-500 text-white",
-				icon: SQLIcon
-		},
-		ANDROID: {
-				name: "Android Studio",
-				class: "bg-green-500 text-white",
-				icon: Android
-		}
+	REACT: {
+			name: "React.js",
+			class: "bg-[#087ea4] text-white",
+			icon: React
+	},
+	NODEJS: {
+			name: "Node.js",
+			class: "bg-green-500 text-white",
+			icon: NodeJS
+	},
+	SOCKETIO: {
+			name: "Socket.io",
+			class: "bg-black text-white",
+			icon: SocketIO
+	},
+	HTML: {
+			name: "HTML",
+			class: "bg-orange-300 text-white",
+			icon: HtmlIcon
+	},
+	CSS: {
+			name: "CSS",
+			class: "bg-blue-500 text-white",
+			icon: CSSIcon
+	},
+	JAVASCRIPT: {
+			name: "JavaScript",
+			class: "bg-yellow-300 text-black",
+			icon: JavaScript
+	},
+	PYTHON: {
+			name: "Python",
+			class: "bg-blue-500 text-white",
+			icon: Python
+	},
+	SQL: {
+			name: "PostgreSQL",
+			class: "bg-blue-500 text-white",
+			icon: SQLIcon
+	},
+	ANDROID: {
+			name: "Android Studio",
+			class: "bg-green-500 text-white",
+			icon: Android
+	},
+	GITHUB: {
+		name: "GitHub",
+		class: "bg-black text-white",
+		icon: Github
+	}
 }
 
 const WEB_PROJECTS = [
@@ -92,15 +98,23 @@ const WEB_PROJECTS = [
         title: "FitConnect - Trabajo Fin de Grado",
         description: "This is my Bachelor's Final Project. It's a Social Media Web App designed for Fitness Enthusiasts. It's built with Next.js + Typescript.js, Tailwind CSS and Supabase. I'm currently working on it.",
         link: "#",
-        github: "#",
+        github: "",
         image: "/projects/tfg.webp",
         tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SUPABASE]
     },
-    {    
+	{
+		title: "Asesin-ADA",
+		description:"Online multiplayer game based on Cluedo. It's a version of the legendary game set in the Ada Byron building at the University of Zaragoza.",
+		link: "#",
+		github: "https://github.com/UNIZAR-30226-2024-01",
+		image: "/projects/asesin-ada.png",
+		tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SOCKETIO, TAGS.PYTHON, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.SQL]
+	},
+    {
         title: "Portfolio",
         description: "This is my personal portfolio, the one you are watching right now. It's a static site built with Astro, Tailwind CSS and TypeScript. It's hosted on Netlify.",
         link: "#",
-        github: "#",
+        github: "https://github.com/javisin22/portfolio",
         image: "/projects/astro.webp",
         tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT]
     }
@@ -136,6 +150,18 @@ const OTHER_PROJECTS = [
 					))
 				}
 			</ul>
+			{/* If project.github is not empty, show the button */}
+			{project.github && (
+				<a 
+					href={project.github} 
+					target="_blank" 
+					rel="noopener noreferrer" 
+					class="inline-flex items-center gap-x-1 text-sm font-semibold text-white border hover:shadow-md transition-colors px-3 py-1 rounded mb-4 hover:bg-black"
+				>
+					<Github class="size-4" />
+					View Code
+				</a>
+			)}
 			<img class="rounded" src={project.image} alt={`Captura de pantalla del proyecto ${project.title}`} />
 		</article>
 	)
