@@ -3,14 +3,23 @@ import ExperienceItem from "./ExperienceItem.astro"
 
 const EXPERIENCE = [
     {
-        date: "Now...",
-        title: "Computer Science Student - Last Year",
-        description: "Computer Science student at my last year of the degree. I'm currently studying at the University of Rhode Island as part of an International Engineering Program, being a beneficiary of one of the 15 scholarships for the whole University of Zaragoza.",
+        date: "June 2025 - Now...",
+        title: "Delivery Analyst (AI & Data) - Deloitte",
+        description: "As a Delivery Analyst specializing in AI and Data, I am responsible for analyzing and delivering data-driven insights to improve business processes and outcomes.",
+        bullets: [
+            "Project with the Government of Spain, focused on the development of ETLs, data management and data ingestion.",
+            "Project with Roche (Switzerland): led a Deloitte team in India as SCRUM Master, responsible for functional work as Business Analyst and liaison between Business Analysts and OCM teams."
+        ]
+    },
+    {
+        date: "Sep 2021 - May 2025",
+        title: "Computer Science Student - Unizar",
+        description: "Computer Science student at the University of Zaragoza. I've studied my last year at the University of Rhode Island as part of an International Engineering Program, being a beneficiary of one of the 15 scholarships for the whole University of Zaragoza.",
         link: "https://internacional.unizar.es/programas-movilidad-estudiantes/programa-uz-norteamerica-oceania-y-asia/programa-de-ayudas-de-11"
 
     },
     {
-        date: "2021 - Now",
+        date: "2021 - 2025",
         title: "Programming, Maths and Physics - Particular Classes Teacher",
         description: "I've been teaching particular classes to high school students in the subjects of programming, maths and physics. I've been helping them to understand the concepts and to improve their grades."
     }
@@ -22,6 +31,11 @@ const EXPERIENCE = [
         EXPERIENCE.map((experience) => (
             <li class="mb-10 ms-4">
                 <ExperienceItem {...experience} />
+                {experience.bullets && (
+                    <ul class="mt-2 ml-6 list-disc text-pretty text-base space-y-1">
+                        {experience.bullets.map(b => <li>{b}</li>)}
+                    </ul>
+                )}
             </li>
         ))
     }
