@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" rx="20" fill="#152329"/>
+  <path d="M0 360h800" stroke="#29434A"/>
+  <circle cx="401" cy="238" r="150" fill="#1B3036"/>
+  <circle cx="401" cy="238" r="119" stroke="#356068" stroke-width="2" stroke-dasharray="5 9"/>
+  <rect x="63" y="95" width="205" height="286" rx="12" fill="#202F35" stroke="#52737A" stroke-width="2"/>
+  <rect x="63" y="95" width="205" height="36" rx="12" fill="#2B4147"/>
+  <circle cx="84" cy="113" r="5" fill="#F29D83"/>
+  <circle cx="102" cy="113" r="5" fill="#F3CB7A"/>
+  <circle cx="120" cy="113" r="5" fill="#82C9B1"/>
+  <path d="m91 179-15 13 15 13m28-26 15 13-15 13m44-30-21 38" stroke="#9CE6D7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M93 265h120M93 287h83M93 309h105M93 331h69" stroke="#68868C" stroke-width="5" stroke-linecap="round"/>
+  <path d="M272 239h91m0 0-20-20m20 20-20 20m114 0h57m0 0-20-20m20 20-20 20" stroke="#7DD3C7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="362" y="166" width="94" height="146" rx="15" fill="#1C3B40" stroke="#7DD3C7" stroke-width="3"/>
+  <path d="M390 207h38m-38 20h38m-38 20h38m-38 20h23" stroke="#B8F1E4" stroke-width="5" stroke-linecap="round"/>
+  <path d="m391 289 13 12 25-28" stroke="#F3CB7A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="542" y="95" width="195" height="286" rx="12" fill="#202F35" stroke="#52737A" stroke-width="2"/>
+  <path d="M571 340V278h35v62m18 0v-92h35v92m18 0V221h35v119" stroke="#7DD3C7" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M571 182h137" stroke="#68868C" stroke-width="4" stroke-linecap="round"/>
+  <text x="165" y="426" fill="#D8E6E5" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Source code + flags</text>
+  <text x="409" y="426" fill="#D8E6E5" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Model</text>
+  <text x="640" y="426" fill="#D8E6E5" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Predicted speedup</text>
+</svg>

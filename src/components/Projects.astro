@@ -1,187 +1,38 @@
 ---
-import NextJS from "./icons/Next.astro"; 
-import Tailwind from "./icons/TailwindCSS.astro";
-import Supabase from "./icons/Supabase.astro";
-import AstroIcon from "./icons/AstroIcon.astro";
-import Typescript from "./icons/Typescript.astro";
-import React from "./icons/React.astro";
-import NodeJS from "./icons/NodeJS.astro";
-import SocketIO from "./icons/Socket-io.astro";
-import HtmlIcon from "./icons/Html.astro";
-import CSSIcon from "./icons/CSS.astro";
-import JavaScript from "./icons/JavaScript.astro";
-import Python from "./icons/Python.astro";
-import SQLIcon from "./icons/SQL.astro";
-import Android from "./icons/Android.astro";
-import Github from "./icons/Github.astro";
-
-const TAGS = {
-    NEXT: {
-        name: "Next.js",
-        class: "bg-black text-white",
-        icon: NextJS
-    },
-    TAILWIND: {
-        name: "Tailwind CSS",
-        class: "bg-[#35bef8] text-black",
-        icon: Tailwind
-    },
-    SUPABASE: {
-        name: "Supabase",
-        class: "bg-green-500 text-white",
-        icon: Supabase
-    },
-    ASTRO: {
-        name: "Astro",
-        class: "bg-purple-500 text-white",
-        icon: AstroIcon
-    },
-    TYPESCRIPT: {
-        name: "TypeScript",
-        class: "bg-[#037acc] text-white",
-        icon: Typescript
-    },
-	REACT: {
-			name: "React.js",
-			class: "bg-[#087ea4] text-white",
-			icon: React
+const PROJECTS = [
+	{
+		title: "Compiler Speedup Prediction",
+		context: "Senior thesis · University of Rhode Island",
+		description: "Explored how source code and compiler flags relate to optimization speedups. The work used Hugging Face CodeRankEmbed, LoRA / PEFT fine-tuning and a PyTorch regression model.",
+		image: "/projects/compiler-speedup.svg",
+		alt: "Diagram of source code and compiler flags feeding a machine learning model to predict speedup",
+		tags: ["CodeRankEmbed", "LoRA / PEFT", "PyTorch", "Compiler optimization"]
 	},
-	NODEJS: {
-			name: "Node.js",
-			class: "bg-green-500 text-white",
-			icon: NodeJS
-	},
-	SOCKETIO: {
-			name: "Socket.io",
-			class: "bg-black text-white",
-			icon: SocketIO
-	},
-	HTML: {
-			name: "HTML",
-			class: "bg-orange-300 text-white",
-			icon: HtmlIcon
-	},
-	CSS: {
-			name: "CSS",
-			class: "bg-blue-500 text-white",
-			icon: CSSIcon
-	},
-	JAVASCRIPT: {
-			name: "JavaScript",
-			class: "bg-yellow-300 text-black",
-			icon: JavaScript
-	},
-	PYTHON: {
-			name: "Python",
-			class: "bg-blue-500 text-white",
-			icon: Python
-	},
-	SQL: {
-			name: "PostgreSQL",
-			class: "bg-blue-500 text-white",
-			icon: SQLIcon
-	},
-	ANDROID: {
-			name: "Android Studio",
-			class: "bg-green-500 text-white",
-			icon: Android
-	},
-	GITHUB: {
-		name: "GitHub",
-		class: "bg-black text-white",
-		icon: Github
+	{
+		title: "FitConnect",
+		context: "Bachelor's final project · University of Zaragoza",
+		description: "In development: a full-stack social application for fitness enthusiasts, built with Next.js, TypeScript, React and Supabase.",
+		image: "/projects/tfg.webp",
+		alt: "FitConnect web application interface showing a fitness community feed",
+		tags: ["Next.js", "TypeScript", "React", "Supabase"]
 	}
-}
-
-const WEB_PROJECTS = [
-    {
-        title: "FitConnect - Trabajo Fin de Grado",
-        description: "This is my Bachelor's Final Project. It's a Social Media Web App designed for Fitness Enthusiasts. It's built with Next.js + Typescript.js, Tailwind CSS and Supabase. I'm currently working on it.",
-        link: "#",
-        github: "",
-        image: "/projects/tfg.webp",
-        tags: [TAGS.NEXT, TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SUPABASE, TAGS.NODEJS]
-    },
-	{
-		title: "ClassConnect",
-		description: "Streamline your tutoring experience with ClassConnect. A platform that connects students with tutors. It's a Full-Stack Web App built with Next.js, Tailwind CSS, Node.js and PostgreSQL.",
-		link: "https://classconnect-18h8.onrender.com",
-		github: "https://github.com/javisin22/csc372_projects",
-		image: "/projects/class-connect.webp",
-		tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND, TAGS.NODEJS, TAGS.JAVASCRIPT, TAGS.SQL]
-	},
-	{
-		title: "Asesin-ADA",
-		description:"Online multiplayer game based on Cluedo. It's a version of the legendary game set in the Ada Byron building at the University of Zaragoza.",
-		link: "#",
-		github: "https://github.com/javisin22/asesin-ada",
-		image: "/projects/asesin-ada.png",
-		tags: [TAGS.REACT, TAGS.NODEJS, TAGS.SOCKETIO, TAGS.PYTHON, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.SQL]
-	},
-    {
-        title: "Portfolio",
-        description: "This is my personal portfolio, the one you are watching right now. It's a static site built with Astro, Tailwind CSS and TypeScript. It's hosted on Netlify.",
-        link: "#",
-        github: "https://github.com/javisin22/portfolio",
-        image: "/projects/astro.webp",
-        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT]
-    }
-]
-
-const OTHER_PROJECTS = [
-    {
-        title: "T221-COMIDAS",
-        description: "This is a project I built for a local restaurant. It's a Mobile App built with Android Studio.",
-        link: "#",
-        github: "https://github.com/javisin22/T221_comidas",
-        image: "https://via.placeholder.com/300x200",
-        tags: ["Android Studio"]
-    },
-    // Add more projects here (Assignments from UniZar)
 ]
 ---
 
 {
-	WEB_PROJECTS.map(project =>
-		<article class="mb-6">
-			<h3 class="text-2xl font-semibold text-orange-300 mb-2">{project.title}</h3>
-			<p class="text-lg text-pretty">{project.description}</p>
-			{ 
-			  project.title == "Asesin-ADA" 
-			    && 
-			  <a 
-			  	href="https://www.google.es/maps/place/Edificio+Ada+Byron,+Mar%C3%ADa+de+Luna,+3,+50018+Zaragoza,+Spain/@41.6834649,-0.8888853,19.29z/data=!4m6!3m5!1s0xd59135db4e3331b:0x4c6c5ca691e471d4!8m2!3d41.6839454!4d-0.8888564!16s%2Fg%2F1hhhmrf2j?entry=tts&g_ep=EgoyMDI1MDIxMi4wIPu8ASoASAFQAw%3D%3D"
-				target="_blank"
-				class="inline-flex items-center gap-x-1 text-sm font-semibold text-white border hover:shadow-md transition-colors px-3 py-1 rounded mt-1 hover:bg-black"
-			  >
-				More info
-			  </a>
-			}
-			<ul class="flex flex-row gap-x-2 mt-4 mb-4">
-				{
-					project.tags.map(tag => (
-						<li>
-							<span class={`flex justify-center items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-								<tag.icon/>  
-								{tag.name}
-							</span>
-						</li>
-					))
-				}
-			</ul>
-			{/* If project.github is not empty, show the button */}
-			{project.github && (
-				<a 
-					href={project.github} 
-					target="_blank" 
-					rel="noopener noreferrer" 
-					class="inline-flex items-center gap-x-1 text-sm font-semibold text-white border hover:shadow-md transition-colors px-3 py-1 rounded mb-4 hover:bg-black"
-				>
-					<Github class="size-4" />
-					View Code
-				</a>
-			)}
-			<img class="rounded" src={project.image} alt={`Captura de pantalla del proyecto ${project.title}`} />
+	PROJECTS.map((project, index) => (
+		<article class={`grid gap-5 border-t border-white/10 py-7 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] md:items-center ${index === 0 ? "md:pt-2" : ""}`}>
+			<div class={index === 0 ? "md:order-2" : ""}>
+				<img class="w-full aspect-[16/10] object-cover rounded-md border border-white/10" src={project.image} alt={project.alt} loading="lazy" />
+			</div>
+			<div class={index === 0 ? "md:order-1" : ""}>
+				<p class="text-sm text-teal-200 mb-2">{project.context}</p>
+				<h3 class="text-2xl font-semibold text-white mb-3">{project.title}</h3>
+				<p class="text-base text-slate-300 leading-relaxed text-pretty">{project.description}</p>
+				<ul class="flex flex-wrap gap-2 mt-4" aria-label={`${project.title} technologies`}>
+					{project.tags.map(tag => <li class="rounded border border-white/10 px-2 py-1 text-xs text-slate-300">{tag}</li>)}
+				</ul>
+			</div>
 		</article>
-	)
+	))
 }

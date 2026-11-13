@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GithubIcon from '../components/icons/Github.astro';
 import MailIcon from '../components/icons/Mail.astro';
@@ -10,28 +9,32 @@ import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro';
+import Education from '../components/Education.astro';
 ---
 
-<Layout title="Javier Sin - Portfolio" description="Javier Sin's Porfolio. Last year's Computer Science Student at the University of Rhode Island">
+<Layout title="Javier Sin - AI Engineer & AI Consultant" description="Javier Sin is an AI and Data Consultant in Zaragoza, Spain, working on LLM evaluation, agentic AI, conversational data intelligence and data engineering.">
 	<main class="px-4">
-		<SectionContainer class="py-44 pb-32">
-			<img class="rounded-full size-20 mb-4 object-cover object-top z-10" src="/profile_pic.jpg" alt="Javier Sin's picture"/>
-			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-				Hey, I'm Javier Sin 
-				<a href="https://linkedin.com/in/javier-sin-pelayo/" target="_blank" rel="noopener" class="flex justify-center items-center">
-					<Badge>Available for hiring</Badge>
-				</a>
+		<SectionContainer id="top" class="pt-36 pb-28 md:pt-44">
+			<div class="flex items-center gap-5 mb-8">
+				<img class="rounded-full size-20 object-cover object-top ring-2 ring-teal-300/40" src="/profile_pic.jpg" alt="Javier Sin Pelayo"/>
+				<div>
+					<p class="text-sm text-slate-400">Zaragoza, Spain</p>
+					<p class="text-sm text-teal-200">AI Engineer · AI &amp; Data Consultant at Deloitte</p>
+				</div>
+			</div>
+			<h1 class="text-white text-4xl md:text-5xl lg:text-6xl leading-tight font-semibold tracking-tight pb-5">
+				Javier Sin Pelayo
 			</h1>
-
-			<h2 class="text-xl lg:text-2xl opacity-80 text-pretty max-w-[700px]">
-				<span class="text-orange-300">Computer Sciencentist</span> from Zaragoza, Spain,  
-				with its last year at the <span class="text-blue-500/80">University of Rhode Island</span>, USA.
-				<br>Eager to become a great <span class="text-green-500/80">Software Engineer</span>.
-			</h2>
+			<p class="text-2xl md:text-3xl text-slate-200 font-medium leading-snug max-w-3xl">
+				I build and evaluate AI systems for real-world workflows.
+			</p>
+			<p class="text-lg leading-relaxed text-slate-400 text-pretty max-w-2xl mt-5">
+				My work spans Python-based LLM evaluation, enterprise conversational AI, agentic integrations and data engineering. I am also pursuing an official Master's Degree in Artificial Intelligence, specialising in Data Engineering.
+			</p>
 
 			<nav class="flex flex-wrap gap-4 mt-8">
 				<ul>
-					<li class="flex flex-row gap-x-4">
+					<li class="flex flex-wrap gap-3">
 						<SocialBadge href="https://linkedin.com/in/javier-sin-pelayo/">
 							<LinkedInIcon class="size-4 lg:size-6"/>
 							LinkedIn
@@ -44,7 +47,6 @@ import Projects from '../components/Projects.astro';
 							<MailIcon class="size-4 lg:size-6"/>
 							javiersinpelayo@gmail.com
 						</SocialBadge>
-
 					</li>
 				</ul>
 			</nav>
@@ -52,7 +54,7 @@ import Projects from '../components/Projects.astro';
 
 		<SectionContainer id="experience">
 			<h2 class="flex gap-x-3 items-center text-3xl font-semibold mb-6">
-				<Briefcase class="size-7"/>
+				<Briefcase class="size-7 text-teal-200"/>
 				Experience
 			</h2>
 			<Experience/>
@@ -66,20 +68,61 @@ import Projects from '../components/Projects.astro';
 			<Projects/>
 		</SectionContainer>
 
-		<SectionContainer>
+		<SectionContainer id="skills">
 			<h2 class="flex gap-x-3 items-center text-3xl font-semibold mb-6">
-				<CodeIcon class="size-7"/>
-				Other Projects
+				<CodeIcon class="size-7 text-teal-200"/>
+				Technical focus
 			</h2>
-			<p>
-				Check my GitHub repositories to see more projects I've worked on:
-				<a 
-					class="inline-flex items-center gap-x-1 text-white border hover:shadow-md transition-colors px-3 py-1 rounded mb-4 hover:bg-black"
-					href="https://github.com/javisin22?tab=repositories"
-					target="_blank"
-				>
+			<div class="grid gap-x-10 gap-y-7 sm:grid-cols-2">
+				<div>
+					<h3 class="text-lg font-semibold text-teal-200 mb-2">AI &amp; machine learning</h3>
+					<p class="text-slate-300 leading-relaxed">Python, PyTorch, TensorFlow / Keras, scikit-learn, Hugging Face Transformers</p>
+				</div>
+				<div>
+					<h3 class="text-lg font-semibold text-teal-200 mb-2">Generative &amp; agentic AI</h3>
+					<p class="text-slate-300 leading-relaxed">OpenAI API, LLM-as-a-Judge evaluation, Model Context Protocol (MCP), AI agent skills</p>
+				</div>
+				<div>
+					<h3 class="text-lg font-semibold text-teal-200 mb-2">Data engineering</h3>
+					<p class="text-slate-300 leading-relaxed">SQL, ETL, Azure Databricks, Databricks Genie, PostgreSQL, MySQL, SQLite</p>
+				</div>
+				<div>
+					<h3 class="text-lg font-semibold text-teal-200 mb-2">Software development</h3>
+					<p class="text-slate-300 leading-relaxed">Git / GitHub, JavaScript, TypeScript, React, Next.js, Node.js, Supabase</p>
+				</div>
+			</div>
+			<p class="border-t border-white/10 mt-8 pt-5 text-sm text-slate-400">
+				Areas of interest: AI security, responsible AI, AI governance, retrieval-augmented generation and secure agentic AI.
+			</p>
+		</SectionContainer>
+
+		<SectionContainer id="education">
+			<h2 class="flex gap-x-3 items-center text-3xl font-semibold mb-6">
+				<svg class="size-7 text-teal-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<path d="m2 9 10-5 10 5-10 5L2 9Z" />
+					<path d="M6 11v5c3 2.7 9 2.7 12 0v-5M22 9v6" />
+				</svg>
+				Education
+			</h2>
+			<Education />
+			<div class="border-t border-white/10 mt-8 pt-6">
+				<h3 class="text-lg font-semibold text-teal-200 mb-3">Certifications</h3>
+				<ul class="space-y-2 text-slate-300">
+					<li>Databricks Certified Machine Learning Associate · September 2026</li>
+					<li>Databricks GenAI Fundamentals · September 2025</li>
+					<li>AWS Cloud Technical Essentials and Migrating to AWS Cloud · June 2024</li>
+				</ul>
+				<h3 class="text-lg font-semibold text-teal-200 mt-6 mb-2">Languages</h3>
+				<p class="text-slate-300">Spanish (native), English (C1, Cambridge English Advanced score 187), French (limited working proficiency)</p>
+			</div>
+		</SectionContainer>
+
+		<SectionContainer class="pb-16">
+			<p class="text-slate-400">
+				For more projects, visit my GitHub repositories:
+				<a class="inline-flex items-center gap-x-2 text-teal-200 underline underline-offset-4 hover:text-white ml-2" href="https://github.com/javisin22?tab=repositories" target="_blank" rel="noopener noreferrer">
 					<GithubIcon class="size-4" />
-					View More
+					Explore GitHub
 				</a>
 			</p>
 		</SectionContainer>

@@ -1,0 +1,28 @@
+---
+const EDUCATION = [
+    {
+        date: "2026 - January 2028 (expected)",
+        title: "Official Master's Degree in Artificial Intelligence",
+        school: "UNIR",
+        description: "Data Engineering specialisation (+12 ECTS). Coursework includes machine learning and deep learning, NLP, computer vision, automated reasoning and planning, big data engineering, and MLOps / AIOps."
+    },
+    {
+        date: "2021 - 2025",
+        title: "BSc in Computer Science",
+        school: "University of Zaragoza",
+        description: "Completed the final year at the University of Rhode Island in the USA (2024 - 2025). Named to the Dean's List with a 4.0 / 4.0 GPA for the 2024/25 academic year."
+    }
+]
+---
+
+<ol class="relative ml-3 border-s border-white/15">
+    {EDUCATION.map(item => (
+        <li class="relative mb-8 ms-4 last:mb-0">
+            <span class="absolute -start-[1.32rem] mt-1.5 size-3 rounded-full border border-[#1a1b20] bg-teal-200"></span>
+            <time class="text-sm text-teal-200/80">{item.date}</time>
+            <h3 class="mt-2 text-lg font-semibold text-white">{item.title}</h3>
+            <p class="text-sm text-slate-400">{item.school}</p>
+            <p class="mt-2 text-base leading-relaxed text-slate-300 text-pretty">{item.description}</p>
+        </li>
+    ))}
+</ol>
